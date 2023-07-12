@@ -1,0 +1,47 @@
+version: "2"
+services:
+  web1:
+    build: .
+    container_name: load1
+    ports:
+      - "8081:8080"
+    networks:
+      - lb_network
+
+
+  web2:
+    build: .
+    container_name: load2
+    ports:
+      - "8082:8080"
+    networks:
+      - lb_network
+
+  web3:
+    build: .
+    container_name: load3
+    ports:
+      - "8083:8080"
+    networks:
+      - lb_network
+
+  web4:
+    build: .
+    container_name: load4
+    ports:
+      - "8084:8080"
+    networks:
+      - lb_network
+
+  web5:
+    build: .
+    container_name: load5
+    ports:
+      - "8085:8080"
+    networks:
+      - lb_network
+
+
+networks:
+  lb_network:
+    external: true
